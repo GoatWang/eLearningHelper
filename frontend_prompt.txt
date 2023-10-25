@@ -1,0 +1,21 @@
+Can you guide me to write a html using js and bootstrap to render with three areas:
+First Area: Transcript Generation: 
+    1. the input of video file upload
+    2. video upload button with a progressbar at the right side
+    3. A textarea: to place the generated transcribe without default value may not be edit in the beginning, but is able to be edited after the text is generated.
+Second Area: Relenvant content Finding
+    1. A title: Writing "Prompt"
+    2. A textarea: for user to input prompt, default value is """Here is the transcript of a lecturer's video. I am planning to create a brief marketing video. Could you, as a financial or accounting practitioner, identify the top 5 most appealing and attention-grabbing sentences in the paragraph?
+
+{paragraph}"""
+    3. A button: Ask chatGPT with a progressbar at the right side
+    4. A list of checkbox and non-editable input text: for placing all sentences in the transcribe, with checkbox for each sentence. Please check the top 10 sentences by default.
+    5. A button: Clip Video with a progressbar at the right side
+    6. A button: Download Video, enabled only after the video is generated
+Third Area: Assessment generation 
+    1. A title: Writing "Prompt"
+    2. A textarea: for user to input prompt, default value is """Here is the transcript of a video lecture. Could you please help me create 10 multiple-choice assessment questions, each with four answer choices, and please also provide the answers at the end?
+
+{paragraph}"""    
+    3. A button: Ask chatGPT with a progressbar at the right side
+    2. A textarea: for placing the generated result from ChatGPT

@@ -1,0 +1,14 @@
+.mp3
+.mp4
+.avi
+data
+temp
+weights
+venv
+packages
+key.txt
+__pycache__
+.DS_Store
+demodata
+build
+dist

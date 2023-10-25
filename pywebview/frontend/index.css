@@ -1,0 +1,26 @@
+.progress {
+    height:30px;
+}
+
+.progress-bar {
+    height:30px;
+}
+
+textarea {
+    height:200px;
+}
+
+table {
+    width: 100%;
+}
+
+.table-container {
+    max-height: 400px; /* Adjust the maximum height to your preference */
+    max-width: 960px; /* Adjust the maximum height to your preference */
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.highlight{
+    background:rgb(209, 209, 209);
+}
