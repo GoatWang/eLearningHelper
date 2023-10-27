@@ -223,9 +223,12 @@ class Api:
             template=text_prompt
         )        
         question = prompt_template.format(transcript=transcript)
-        print(question)
         llm = OpenAI(temperature=.2, model_name="gpt-3.5-turbo", openai_api_key=self.OPENAI_API_KEY)
         answer = llm.predict(question)
+
+        self.window.evaluate_js(f"console.log(`{question}`)")
+        self.window.evaluate_js(f"console.log(`{answer}`)")
+
         if self.save_test_data:
             with open(os.path.join(self.temp_dir, "result_assessment.txt"), "w") as f:
                 f.write(answer)
@@ -236,7 +239,7 @@ if __name__ == '__main__':
     api = Api(save_test_data=False)
     window = webview.create_window('VideoClipper', 'frontend/index.html', js_api=api, fullscreen=True)
     api.window = window
-    webview.start(debug=True)
+    webview.start(debug=False)
 
 
 

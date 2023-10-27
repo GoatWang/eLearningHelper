@@ -133,10 +133,11 @@ function addVideoUploadEvent(){
                     removeProgressBar("transcriptProgress2")
                     enableVideoUploadNextSteps(transcript)
                 }).catch(() => {
+                    removeProgressBar("transcriptProgress2")
                     alert("Fail transcribing!")
-        
                 })                    
             }).catch(() => {
+                removeProgressBar("transcriptProgress1")
                 alert("Fail reading file!")
             })
 
@@ -204,6 +205,7 @@ function addAskChatGptVideoEvent(){
             removeProgressBar("askChatGPTVideoProgress")
             enableAskChatGptVideoEventNextSteps(json_table)
         }).catch(() => {
+            removeProgressBar("askChatGPTVideoProgress")
             alert("ChatGPT connection fail!")
         })
     })
@@ -230,6 +232,7 @@ function addClipVideoEvent(){
             removeProgressBar("clipProgress")
             downloadVideoBtn.removeAttribute('disabled');
         }).catch(() => {
+            removeProgressBar("clipProgress")
             alert("Video clipping fail!")
         })
     })
@@ -248,7 +251,7 @@ function adddownloadVideoEvent(){
 function enableAskChatGptAssessmentEventNextSteps(assessment_result){
     const assessmentRsultArea = document.getElementById("assessmentRsultArea");
     assessmentRsultArea.removeAttribute("disabled")
-    assessmentRsultArea.innerText = assessment_result
+    assessmentRsultArea.innerHTML = assessment_result
 }
 
 function addAskChatGptAssessmentEvent(){
@@ -259,13 +262,11 @@ function addAskChatGptAssessmentEvent(){
     askChatGPTAssessmentBtn.addEventListener("click", () => {
             const progressBar5 = createProgressBar("askChatGPTAssessmentProgress", "ChatGPT answer generating...")
             updateProgressBar(progressBar5, 20)
-
-            console.log("assessmentPromptArea.value")
-            console.log(assessmentPromptArea.value)
             pywebview.api.ask_chatgpt_assessment(assessmentPromptArea.value, transcriptArea.value).then((assessment_result) => {
                 removeProgressBar("askChatGPTAssessmentProgress")
                 enableAskChatGptAssessmentEventNextSteps(assessment_result)
             }).catch(() => {
+                removeProgressBar("askChatGPTAssessmentProgress")
                 alert("ChatGPT connection fail!")
             })
     })

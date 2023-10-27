@@ -13,7 +13,7 @@ a = Analysis(
         ('frontend/*', 'frontend'),
         ('key.txt', '.')],
     hiddenimports=[],
-    hookspath=[],
+    hookspath=['.'],
     hooksconfig={},
     runtime_hooks=[],
     excludes=[],

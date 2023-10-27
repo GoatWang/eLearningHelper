@@ -3,3 +3,4 @@
 3. [X] add description for progressbar
 4. [X] delete original resultTable if it is generated twice
 5. modify the example in the prompt
+6. fail then cancel progressbar

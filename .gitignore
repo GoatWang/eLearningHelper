@@ -1,6 +1,10 @@
 .mp3
 .mp4
 .avi
+.exe
+
+
+
 data
 temp
 weights
